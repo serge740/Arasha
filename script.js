@@ -116,6 +116,7 @@ signBox.addEventListener("click",function(i){
         nameSong.innerText +="Travis Scott | TIL FURTHER NOTICE ";
 
         audio.play()
+        audio.loop="true"
         theMusic.classList.add("show-music");
 
     } 
@@ -132,6 +133,7 @@ signBox.addEventListener("click",function(i){
        audio.play()
        nameSong.innerText+="Fortnite | Coral Chorus Lobby Music";
        theMusic.classList.add("show-music");
+       audio.loop="true"
    
     }
     
