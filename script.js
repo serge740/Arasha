@@ -12,7 +12,8 @@ var logOut=document.querySelector(".logOut");
 var theMusic=document.querySelector(".the-music");
 var demo=document.getElementById("demo")
 var imgDemo=document.getElementById("img-demo")
-
+var songRemover=document.querySelector(".box-remover")
+var nameSong=document.getElementById("nameSong")
 //  MUSIC SHITS
 
 
@@ -27,8 +28,8 @@ function makeSound(sound){
     theMusic.classList.remove("show-music")
  }
     var audio= new Audio();
-    // audio.src="./choral.mp3";
-   setInterval(choral,3500)
+    
+//    setTimeout(choral,7500)
 
 // SCROLLING CODES
 
@@ -39,22 +40,25 @@ window.addEventListener("scroll",function(){
        
     };
 
-    if(this.window.scrollY>=255){
+    // if(this.window.scrollY>=95){
        
-        audio.loop="true"
-        audio.play()
-       audio.autoplay=true;
-    };
-    if(this.window.scrollY<255){
-        theMusic.classList.add("show-music")
+    //     audio.loop="true"
+    //     audio.play()
+    //    audio.autoplay=true;
+    // };
+    // if(this.window.scrollY<=95){
+       
+    //     audio.loop="true"
+    //     audio.pause()
+    //    audio.autoplay=true;
+    // };
+    // if(this.window.scrollY<255){
+    //     theMusic.classList.add("show-music")
       
-    };
-    if(this.window.scrollY<=55){
-        audio.pause()
-       
-    };
+    // };
+  
     
-    if(this.window.scrollY<=59){
+    if(this.window.scrollY<=95){
         header.classList.remove("scrolled");
        
     };
@@ -103,19 +107,32 @@ signBox.addEventListener("click",function(i){
         i.preventDefault()
     }
     else if (input.value=="serge"){
+        audio.src="./19 TIL FURTHER NOTICE.mp3";
         signIn.classList.add("sign-out");
         links.appendChild(user);
-        imgDemo.src="serge.jpg"
-        user.setAttribute("onclick","shark()")
-        demo.innerText="serge"
+        imgDemo.src="serge.jpg";
+        user.setAttribute("onclick","shark()");
+        demo.innerText="serge";
+        nameSong.innerText +="Travis Scott | TIL FURTHER NOTICE ";
+
+        audio.play()
+        theMusic.classList.add("show-music");
+
     } 
 
     else if (input.value=="guest"){
+        audio.play()
+
+    audio.src="./choral.mp3";
         signIn.classList.add("sign-out");
         links.appendChild(guest);
-        guest.setAttribute("onclick","shark()")
-        demo.innerText="guest"
-       imgDemo.src="user.svg"
+        guest.setAttribute("onclick","shark()");
+        demo.innerText="guest";
+       imgDemo.src="user.svg";
+       audio.play()
+       nameSong.innerText+="Fortnite | Coral Chorus Lobby Music";
+       theMusic.classList.add("show-music");
+   
     }
     
     else{
@@ -125,6 +142,12 @@ signBox.addEventListener("click",function(i){
   }
 
 })
+
+songRemover.onclick=function(){
+    audio.pause()
+    choral();
+}
+
 // user.onclick=function(){
 //     userBox.classList.toggle("show-userBox")
 // }
@@ -138,7 +161,7 @@ function shark(){
 
 
 
-// setTimeout(sign,3000)
+setTimeout(sign,3000)
 
 //  LOADING CODES
 
